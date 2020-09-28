@@ -1,0 +1,23 @@
+cat << _EOF_  > values.yaml
+system_domain: ${node_ip}.nip.io
+services:
+  router:
+    externalIPs:
+    - ${node_ip}
+services:
+  router:
+    type: LoadBalancer
+    externalIPs: [${node_ip}]
+  ssh-proxy:
+    type: LoadBalancer
+    externalIPs: [${node_ip}]
+  tcp-router:
+    type: LoadBalancer
+    externalIPs: [${node_ip}]
+    port_range:
+      start: 20000
+      end: 20008
+kube:
+  service_cluster_ip_range: 0.0.0.0/0
+  pod_cluster_ip_range: 0.0.0.0/0
+_EOF_
