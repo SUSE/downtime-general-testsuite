@@ -28,7 +28,7 @@ case "${CMD}" in
     SCF_CHART="${KUBECF_CHART}" make kubecf
     ;;
   upgrade)
-    SCF_CHART="${KUBECF_CHART}" make kubecf-upgrade
+    SCF_CHART="${KUBECF_CHART}" make kubecf-chart kubecf-upgrade
     ;;
   clean)
     make kubecf-clean
