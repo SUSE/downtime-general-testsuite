@@ -1,21 +1,17 @@
-package cuts_tests
+package cutstests
 
 import (
 	"encoding/base64"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"testing"
 
-	. "github.com/cloudfoundry/cf-acceptance-tests/helpers/cli_version_check"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"gopkg.in/yaml.v2"
 )
-
-const minCliVersion = "6.33.1"
 
 var apiURL string
 var systemDomain string
@@ -27,10 +23,7 @@ func TestBase(t *testing.T) {
 }
 
 var _ = BeforeSuite(func() {
-	installedVersion, err := GetInstalledCliVersionString()
-	Expect(err).ToNot(HaveOccurred(), "Error trying to determine CF CLI version")
-	fmt.Println("Running CUTs with CF CLI version ", installedVersion)
-
+	var err error
 	apiURL, systemDomain, err = getCfDomains()
 	Expect(err).ToNot(HaveOccurred())
 	Expect(systemDomain).ToNot(BeEmpty())
