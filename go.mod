@@ -3,6 +3,7 @@ module github.com/dragonchaser/cluster-acceptance-tests
 go 1.15
 
 require (
+	github.com/cloudfoundry-community/go-cfclient v0.0.0-20200413172050-18981bf12b4b
 	github.com/cloudfoundry-incubator/cf-test-helpers v1.0.0
 	github.com/cloudfoundry/cf-acceptance-tests v2.16.0+incompatible
 	github.com/fsnotify/fsnotify v1.4.10-0.20200417215612-7f4cf4dd2b52 // indirect
@@ -13,4 +14,5 @@ require (
 	golang.org/x/text v0.3.4-0.20200826142016-a8b467125457 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
+	gopkg.in/yaml.v2 v2.3.0
 )

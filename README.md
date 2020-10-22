@@ -14,9 +14,25 @@
   ```
   $> BACKEND=gke make k8s
   ```
+- deploy kubecf using catapult, we suggest using our `kubecf_helper.sh` mentioned below using:
+  ```
+  $> export KUBECF_CHART=/absolut/path/to/the/base/helm/chart_bundle.tgz
+  $> ./helpers/kubecf_helper.sh deploy
+  ```
+  if you want to run with HA and eirini use:
+  ```
+  $> HA=true ENABLE_EIRINI=true ./helpers/kubecf_helper.sh deploy
+  ```
+  instead of the last command above.
+
+  **Note:** If you do not deploy with HA, the downtime test will alwyays fail.
 - export your catapult path
   ```
-  $> export CATAPULT_PATH=/absolut/path/to/your/catapult/repo
+  $> export CATAPULT_DIR=/absolut/path/to/your/catapult/repo
+  ```
+- export the absolute path to the target helm chart tarball (the suite relies on the kubcf_helper mentioned below)
+  ```
+  $> export KUBECF_TARGET_CHART=/absolut/path/to/the/target/helm/chart_bundle.tgz
   ```
 - got to this repos path
 - start the test suite
