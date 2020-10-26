@@ -1,4 +1,4 @@
-package cutstests
+package dogstests
 
 import (
 	"encoding/base64"
@@ -19,7 +19,7 @@ var cfAdminPassword string
 
 func TestBase(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "CUTS")
+	RunSpecs(t, "DOGS")
 }
 
 var _ = BeforeSuite(func() {

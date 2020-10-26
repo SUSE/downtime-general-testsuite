@@ -1,4 +1,4 @@
-package cutstests
+package dogstests
 
 import (
 	"crypto/tls"
@@ -11,7 +11,7 @@ import (
 	"time"
 
 	cfclient "github.com/cloudfoundry-community/go-cfclient"
-	"github.com/dragonchaser/cluster-acceptance-tests/cuts/uaa"
+	"github.com/dragonchaser/cluster-acceptance-tests/dogs/uaa"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -22,15 +22,15 @@ var _ = Describe("Upgrade process", func() {
 		client *cfclient.Client
 
 		testDomain string
-		testOrg    = "cutsTestOrg"
-		testSpace  = "cutsTestSpace"
-		testUser   = "cutsTestUser"
+		testOrg    = "dogsTestOrg"
+		testSpace  = "dogsTestSpace"
+		testUser   = "dogsTestUser"
 		// testUserPassword = "changeme"
 		testApp = "testDora"
 	)
 
 	BeforeEach(func() {
-		testDomain = "cutstests." + systemDomain
+		testDomain = "godstests." + systemDomain
 		c := &cfclient.Config{
 			ApiAddress:        "https://" + apiURL,
 			Username:          "admin",

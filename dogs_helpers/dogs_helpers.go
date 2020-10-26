@@ -1,4 +1,4 @@
-package cuts_helpers
+package dogs_helpers
 
 import (
 	"strings"

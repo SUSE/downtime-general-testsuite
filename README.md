@@ -1,4 +1,4 @@
-# CUTS - Cluster upgrade tests
+# DOGS - Downtime General Testsuite
 
 ## Workflow
 
